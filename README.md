@@ -1,2 +1,2 @@
 # Game_LumberJock
-It's a university project build from me
+It's a university project build from me.
