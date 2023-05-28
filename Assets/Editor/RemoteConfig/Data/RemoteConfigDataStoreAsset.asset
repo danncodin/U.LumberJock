@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
+  m_Name: RemoteConfigDataStoreAsset
+  m_EditorClassIdentifier: 
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"d5573ed4-883c-4362-aa9c-d6a47271f176\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"key_remoteDaniel\",\r\n      \"type\":
+    \"string\",\r\n      \"value\": \"silver39\"\r\n    }\r\n  }\r\n]"
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"d5573ed4-883c-4362-aa9c-d6a47271f176\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"key_remoteDaniel\",\r\n      \"type\":
+    \"float\",\r\n      \"value\": 20.0\r\n    }\r\n  }\r\n]"
+  _environments: "[\r\n  {\r\n    \"projectId\": \"77750bba-ec96-4e13-935e-1bb4d450cedd\",\r\n   
+    \"name\": \"production\",\r\n    \"id\": \"6729a141-2947-4a46-ad14-3b33ceca506b\",\r\n   
+    \"isDefault\": true,\r\n    \"createdAt\": \"2023-05-26T22:31:38Z\",\r\n    \"updatedAt\":
+    \"2023-05-26T22:31:38Z\"\r\n  }\r\n]"
