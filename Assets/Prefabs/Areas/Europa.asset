@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a1cb7ea97aff54a92902b9e99ef358, type: 3}
+  m_Name: Europa
+  m_EditorClassIdentifier: 
+  availableTreeProfiles:
+  - {fileID: 11400000, guid: 214a8f555010144469b20ac08fb389ae, type: 2}
+  - {fileID: 11400000, guid: 8c8bd23246e25ec4193f23f768dcfc4a, type: 2}
+  - {fileID: 11400000, guid: 256d183118ff3484495081be866ace81, type: 2}

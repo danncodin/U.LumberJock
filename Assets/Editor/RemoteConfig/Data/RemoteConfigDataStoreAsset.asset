@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"d5573ed4-883c-4362-aa9c-d6a47271f176\"\r\n   
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"d708cacd-d11b-436e-98e2-8bb9c31f6a75\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"key_remoteDaniel\",\r\n      \"type\":
-    \"string\",\r\n      \"value\": \"silver39\"\r\n    }\r\n  }\r\n]"
-  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"d5573ed4-883c-4362-aa9c-d6a47271f176\"\r\n   
+    \"float\",\r\n      \"value\": 20.0\r\n    }\r\n  }\r\n]"
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"d708cacd-d11b-436e-98e2-8bb9c31f6a75\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"key_remoteDaniel\",\r\n      \"type\":
     \"float\",\r\n      \"value\": 20.0\r\n    }\r\n  }\r\n]"
   _environments: "[\r\n  {\r\n    \"projectId\": \"77750bba-ec96-4e13-935e-1bb4d450cedd\",\r\n   

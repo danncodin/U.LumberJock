@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeData : MonoBehaviour
+[CreateAssetMenu]
+public class TreeData : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int BaseHitPoints;
+    public int wood;
+    public Sprite TreeImage;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
