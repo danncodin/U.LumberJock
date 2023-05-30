@@ -7,7 +7,7 @@ public class Tree : MonoBehaviour
     public int wood;
     public int TreeWood;
     public TextMeshProUGUI woodText;
-    public int maxHitPoints = 10;
+    public int maxHitPoints;
     public int currentHitPoints;
     public Slider hitpointSlider;
     public TextMeshProUGUI hitPointText;

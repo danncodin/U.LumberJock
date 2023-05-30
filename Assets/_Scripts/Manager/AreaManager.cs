@@ -5,6 +5,7 @@ using UnityEngine;
 public class AreaManager : MonoBehaviour
 {
     public AreaProfile areaProfile;
+    
     public TreeData GetTree()
     {
         // var treeData = areaProfile.availableTreeProfiles[0];
