@@ -21,11 +21,13 @@ public class UpgradeManager : MonoBehaviour
         upgrade1CostText.text = "Price: " + CalculateUpgradeCost();
     }
 
-        public void Upgrade1Buy()
+        public void Upgrade()
     {
         // Faça o upgrade usando as informações do Tree
-        int wood = tree.wood;
-        Debug.LogError(wood);
+        int woodCount = tree.GetWoodCount();
+        Debug.Log("Quantidade de Madeiras: " + woodCount);
+        woodCount -= 25;
+        Debug.Log("Quantidade de Madeiras: " + woodCount);
         // Faça as ações necessárias para o upgrade
     }
     private int CalculateUpgradeCost()

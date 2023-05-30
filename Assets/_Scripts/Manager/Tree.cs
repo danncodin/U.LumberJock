@@ -67,5 +67,8 @@ public class Tree : MonoBehaviour
         TreeWood = treeData.wood;
         treeNameText.text = treeData.name;
     }
-
+    public int GetWoodCount()
+    {
+      return wood;
+    }
 }
