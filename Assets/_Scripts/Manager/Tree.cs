@@ -26,11 +26,12 @@ public class Tree : MonoBehaviour
     public void OnTreeClick()
     {
         TreeDamaged();
+        GetWoodCount();
     }
 
     void TreeDamaged()
     {
-      currentHitPoints -= 1;
+      Axe();
       UpdateUI();
       CheckForTreeDeath();
     }
@@ -57,7 +58,7 @@ public class Tree : MonoBehaviour
     {
       hitPointText.text = currentHitPoints + " HP";
       hitpointSlider.value = currentHitPoints / (float) maxHitPoints;
-      woodText.text = "Wood: " + wood;
+      woodText.text = "Wood: " + GetWoodCount();
     }
     // Get next Tree profile from scriptable object
     private void SetTreeData()
@@ -70,5 +71,18 @@ public class Tree : MonoBehaviour
     public int GetWoodCount()
     {
       return wood;
+    }
+    // public int UpgradeWood()
+    // {
+    //    return GetWoodCount() * 2;
+    // }
+    public int Axe()
+    {
+        return currentHitPoints -= 1;
+    }
+
+    void Update()
+    {
+        UpdateUI();
     }
 }

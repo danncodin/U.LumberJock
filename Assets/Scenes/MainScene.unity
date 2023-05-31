@@ -976,7 +976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade1CostText: {fileID: 880717263}
-  tree: {fileID: 1359634364}
+  vtree: {fileID: 1359634364}
 --- !u!4 &445709887
 Transform:
   m_ObjectHideFlags: 0
@@ -984,7 +984,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 445709885}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 783.9032, y: 518.953, z: -7.992878}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1475,8 +1475,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4280887600
+  m_fontColor: {r: 0.18867922, g: 0.15930934, b: 0.15930934, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1728,7 +1728,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204819060}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2178,7 +2178,7 @@ MonoBehaviour:
   treeData: {fileID: 11400000, guid: 214a8f555010144469b20ac08fb389ae, type: 2}
   treeImage: {fileID: 1359634362}
   treeNameText: {fileID: 822962551}
-  areaManager: {fileID: 1204819062}
+  areaManager: {fileID: 0}
 --- !u!1 &1402122664
 GameObject:
   m_ObjectHideFlags: 0

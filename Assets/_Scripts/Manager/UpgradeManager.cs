@@ -8,12 +8,13 @@ public class UpgradeManager : MonoBehaviour
 {
 
     public TMP_Text upgrade1CostText;
-    public Tree tree;
-
+    public Tree vtree;
+    // public int upgradeWood;
+    private int upgradeMultiplier = 1;
 
     void Start()
     {
-        tree = FindAnyObjectByType<Tree>();
+        vtree = FindAnyObjectByType<Tree>();
     }
 
     public void FixedUpdate()
@@ -21,19 +22,25 @@ public class UpgradeManager : MonoBehaviour
         upgrade1CostText.text = "Price: " + CalculateUpgradeCost();
     }
 
-        public void Upgrade()
+    public void Upgrade1Buy()
     {
-        // Faça o upgrade usando as informações do Tree
-        int woodCount = tree.GetWoodCount();
-        Debug.Log("Quantidade de Madeiras: " + woodCount);
-        woodCount -= 25;
-        Debug.Log("Quantidade de Madeiras: " + woodCount);
+
+        if (vtree.wood >= CalculateUpgradeCost())
+        {
+            vtree.wood -= CalculateUpgradeCost();
+
+            upgradeMultiplier++;
+
+            // upgradeWood = vtree.UpgradeWood();
+
+            upgrade1CostText.text = "Price: " + CalculateUpgradeCost();
+        }
+        Debug.Log("Quantidade de Madeiras: " + vtree.GetWoodCount());
         // Faça as ações necessárias para o upgrade
     }
     private int CalculateUpgradeCost()
     {
-        // Faça o cálculo do custo do upgrade com base nas informações do Tree
-        // Retorne o custo calculado
-        return 0;
+        int baseCost = 25;
+        return baseCost * upgradeMultiplier;
     }
 }
