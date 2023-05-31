@@ -4,7 +4,7 @@ using TMPro;
 
 
 
-public class UpgradeManager : MonoBehaviour
+public class UpgradeWoodManager : MonoBehaviour
 {
 
     public TMP_Text upgrade1CostText;
