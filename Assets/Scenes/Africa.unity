@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 18583145}
   - component: {fileID: 18583144}
   m_Layer: 5
-  m_Name: Upgrade2 Button
+  m_Name: UpgradeAxe Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -238,7 +238,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 18583145}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 48713732}
+        m_TargetAssemblyTypeName: UpgradeAxeManager, Assembly-CSharp
+        m_MethodName: UpgradeAxeBuy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &18583145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,6 +289,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18583142}
   m_CullTransparentMesh: 1
+--- !u!1 &48713730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 48713731}
+  - component: {fileID: 48713732}
+  m_Layer: 0
+  m_Name: UpgradeAxe Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &48713731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48713730}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 207869038}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &48713732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48713730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5336e149792ffe449880b0074b3f2d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeAxeCostText: {fileID: 317871311}
+  vtree: {fileID: 1359634364}
 --- !u!1 &61842628
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,6 +756,8 @@ Transform:
   m_Children:
   - {fileID: 1272930147}
   - {fileID: 435013509}
+  - {fileID: 48713731}
+  - {fileID: 908203636}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -786,9 +846,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 435013510}
+        m_TargetAssemblyTypeName: UpgradeWoodManager, Assembly-CSharp
+        m_MethodName: UpgradeWoodBuy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1127,8 +1187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2444bca6dd35d6448467ef61a0ca4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeWoodCostText: {fileID: 0}
-  vtree: {fileID: 0}
+  upgradeWoodCostText: {fileID: 880717263}
+  vtree: {fileID: 1359634364}
 --- !u!1 &460509468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,6 +1864,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &908203635 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1429072334901991913, guid: bb896a53a893b824982a53bfe7aa1b0d, type: 3}
+  m_PrefabInstance: {fileID: 1429072335268859802}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b7010096cda964d8d9f015cd029b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &908203636 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1429072334901991918, guid: bb896a53a893b824982a53bfe7aa1b0d, type: 3}
+  m_PrefabInstance: {fileID: 1429072335268859802}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1085218437
 GameObject:
   m_ObjectHideFlags: 0
@@ -2139,7 +2215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d083a514c4749ac43b80731d79a032dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  areaProfile: {fileID: 11400000, guid: 2e23fe0735676cd4caca595af4ea309a, type: 2}
+  areaProfile: {fileID: 11400000, guid: 765142366d6151a418904094a52a8b9d, type: 2}
 --- !u!4 &1272930147
 Transform:
   m_ObjectHideFlags: 0
@@ -2397,6 +2473,7 @@ MonoBehaviour:
   woodText: {fileID: 1093674970}
   maxHitPoints: 10
   currentHitPoints: 0
+  transitionTime: 0.2
   hitpointSlider: {fileID: 1327575847}
   hitPointText: {fileID: 762588938}
   treeData: {fileID: 11400000, guid: 214a8f555010144469b20ac08fb389ae, type: 2}
@@ -2555,7 +2632,7 @@ GameObject:
   - component: {fileID: 1703822755}
   - component: {fileID: 1703822754}
   m_Layer: 5
-  m_Name: Upgrade3 Button
+  m_Name: UpgradeArea Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2568,7 +2645,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703822752}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5038, y: 1.5038, z: 1.5038}
   m_ConstrainProportionsScale: 0
@@ -2580,7 +2657,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 488, y: -27}
+  m_AnchoredPosition: {x: 488.0002, y: -27.000053}
   m_SizeDelta: {x: 220.7, y: 81.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1703822754
@@ -2626,7 +2703,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1703822755}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 908203635}
+        m_TargetAssemblyTypeName: UpgradeAreaManager, Assembly-CSharp
+        m_MethodName: UpgradeAreaBuy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1703822755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2907,7 +2996,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.9529412, g: 0.52707165, b: 0.28235295, a: 1}
+  m_Color: {r: 0.9529412, g: 0.86780536, b: 0.28235295, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2943,7 +3032,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1863756108}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -7.49}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2968,7 +3057,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.8748908, g: 0.8980392, b: 0.6039216, a: 0}
+  m_BackGroundColor: {r: 0.80499846, g: 0.8980392, b: 0.6039216, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3132,3 +3221,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1429072335268859802
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 207869038}
+    m_Modifications:
+    - target: {fileID: 1270775946511710591, guid: bb896a53a893b824982a53bfe7aa1b0d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -149
+      objectReference: {fileID: 0}
+    - target: {fileID: 1305884724596644410, guid: bb896a53a893b824982a53bfe7aa1b0d, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429072334901991912, guid: bb896a53a893b824982a53bfe7aa1b0d, type: 3}
+      propertyPath: m_Name
+      value: UpgradeArea Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429072334901991913, guid: bb896a53a893b824982a53bfe7aa1b0d, type: 3}
+      propertyPath: vtree
+      value: 
+      objectReference: {fileID: 1359634364}
+    - target: {fileID: 1429072334901991913, guid: bb896a53a893b824982a53bfe7aa1b0d, type: 3}
+      propertyPath: upgradeAreaCostText
+      value: 
+      objectReference: {fileID: 828567193}
+    - target: {fileID: 1429072334901991918, guid: bb896a53a893b824982a53bfe7aa1b0d, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429072334901991918, guid: bb896a53a893b824982a53bfe7aa1b0d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429072334901991918, guid: bb896a53a893b824982a53bfe7aa1b0d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429072334901991918, guid: bb896a53a893b824982a53bfe7aa1b0d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429072334901991918, guid: bb896a53a893b824982a53bfe7aa1b0d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429072334901991918, guid: bb896a53a893b824982a53bfe7aa1b0d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429072334901991918, guid: bb896a53a893b824982a53bfe7aa1b0d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429072334901991918, guid: bb896a53a893b824982a53bfe7aa1b0d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429072334901991918, guid: bb896a53a893b824982a53bfe7aa1b0d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429072334901991918, guid: bb896a53a893b824982a53bfe7aa1b0d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429072334901991918, guid: bb896a53a893b824982a53bfe7aa1b0d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673096358534016625, guid: bb896a53a893b824982a53bfe7aa1b0d, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1863756111}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bb896a53a893b824982a53bfe7aa1b0d, type: 3}
