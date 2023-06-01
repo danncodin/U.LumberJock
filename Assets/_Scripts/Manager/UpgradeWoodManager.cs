@@ -10,6 +10,7 @@ public class UpgradeWoodManager : MonoBehaviour
     public TMP_Text upgradeWoodCostText;
     public Tree vtree;
     private int upgradeMultiplier = 1;
+    public AudioSource upgradeWoodSound;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class UpgradeWoodManager : MonoBehaviour
 
         if (vtree.wood >= CalculateUpgradeCost())
         {
+            upgradeWoodSound.Play();
             vtree.wood -= CalculateUpgradeCost();
 
             upgradeMultiplier ++;
@@ -37,11 +39,11 @@ public class UpgradeWoodManager : MonoBehaviour
         Debug.Log("Quantidade de Madeiras: " + vtree.GetWoodCount());
         // Faça as ações necessárias para o upgrade
     }
-    private int CalculateUpgradeCost()
+    private double CalculateUpgradeCost()
     {
-        int baseCost = 30;
-        return baseCost * upgradeMultiplier;
-    }    
+        double baseCost = 45;
+        return Math.Round((Math.Pow((baseCost * upgradeMultiplier),  1.2)));
+    } 
     public int UpgradeWood()
     {
         return vtree.UpgradeWood();

@@ -22,6 +22,9 @@ public class Tree : MonoBehaviour
     public TextMeshProUGUI treeNameText;
     public AreaManager areaManager;
     public UpgradeAreaManager woodUP;
+    public AudioSource treeChopSound;
+    public AudioSource treeDiyngSound;
+    
 
     private void Start()
     {
@@ -32,12 +35,14 @@ public class Tree : MonoBehaviour
     // Wire this to the tree button component 
     public void OnTreeClick()
     {
+        treeChopSound.Play();
         TreeDamaged();
         GetWoodCount();
     }
 
     void TreeDamaged()
     {
+      treeDiyngSound.Play();
       Axe();
       UpdateUI();
       CheckForTreeDeath();

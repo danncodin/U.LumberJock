@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/ButtonStyle.uss?fileID=7433441132597879392&amp;guid=53b9cbe1f47ac5448945a070cd1dd70a&amp;type=3#ButtonStyle" />
+    <ui:VisualElement name="Backgroud" style="background-color: rgba(0, 0, 0, 0); height: 200px; flex-grow: 1; align-items: center; justify-content: center;">
+        <ui:VisualElement style="height: 457px; width: 379px; background-color: rgb(255, 255, 255); border-top-left-radius: 37px; border-bottom-left-radius: 37px; border-top-right-radius: 37px; border-bottom-right-radius: 37px; align-items: center; justify-content: center;">
+            <ui:Label text="Pause" display-tooltip-when-elided="true" style="width: 191px; font-size: 51px; -unity-text-align: upper-center; position: absolute; top: 20px;" />
+            <ui:Button text="Resume Game" display-tooltip-when-elided="true" name="resumeButton" class="button-style" />
+            <ui:Button text="Show message" display-tooltip-when-elided="true" name="message-button" class="button-style" style="margin-top: 6px; display: flex;" />
+            <ui:Label text="Label" display-tooltip-when-elided="true" name="message-text" style="display: none;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
