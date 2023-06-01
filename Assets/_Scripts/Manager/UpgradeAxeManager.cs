@@ -31,7 +31,7 @@ public class UpgradeAxeManager : MonoBehaviour
 
             upgradeMultiplier++;
 
-            // upgradeWood = vtree.UpgradeWood();
+            UpgradeAxe();
 
             upgradeAxeCostText.text = "Price: " + CalculateUpgradeCost();
         }
@@ -45,6 +45,6 @@ public class UpgradeAxeManager : MonoBehaviour
     }
     public int UpgradeAxe()
     {
-        return CalculateUpgradeCost();
+        return vtree.UpgradeAxe();
     }
 }

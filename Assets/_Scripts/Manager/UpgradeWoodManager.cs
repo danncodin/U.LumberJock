@@ -32,7 +32,6 @@ public class UpgradeWoodManager : MonoBehaviour
             upgradeMultiplier++;
 
             UpgradeWood();
-            Debug.Log(UpgradeWood());
 
             upgradeWoodCostText.text = "Price: " + CalculateUpgradeCost();
         }
@@ -46,6 +45,6 @@ public class UpgradeWoodManager : MonoBehaviour
     }
     public int UpgradeWood()
     {
-        return 2;
+        return vtree.UpgradeWood();
     }
 }

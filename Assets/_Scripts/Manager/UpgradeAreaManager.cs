@@ -35,7 +35,7 @@ public class UpgradeAreaManager : MonoBehaviour
 
             upgradeMultiplier++;
 
-            LoadNextLevel();
+            LoadNextLevel(1);
 
             upgradeAreaCostText.text = "Price: " + CalculateUpgradeCost();
         }
@@ -47,9 +47,9 @@ public class UpgradeAreaManager : MonoBehaviour
         int baseCost = 1;
         return baseCost * upgradeMultiplier;
     }
-    public void LoadNextLevel()
+    public void LoadNextLevel(int levelIndex)
     {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1)); 
+        StartCoroutine(LoadLevel(levelIndex)); 
     }
     IEnumerator LoadLevel(int levelIndex)
     {

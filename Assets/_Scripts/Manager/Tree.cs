@@ -9,6 +9,8 @@ public class Tree : MonoBehaviour
     public int wood;
     public int TreeWood;
     public int countDie = 0;
+    public int hitPoint = 1;
+    public int woodPoint = 1;
     public TextMeshProUGUI woodText;
     public int maxHitPoints;
     public int currentHitPoints;
@@ -19,14 +21,13 @@ public class Tree : MonoBehaviour
     public Image treeImage;
     public TextMeshProUGUI treeNameText;
     public AreaManager areaManager;
-    public UpgradeWoodManager woodUP;
-
+    public UpgradeAreaManager woodUP;
 
     private void Start()
     {
-        woodUP = FindAnyObjectByType<UpgradeWoodManager>();
-        SpawnTree();
-        UpdateUI();
+      woodUP = FindAnyObjectByType<UpgradeAreaManager>();
+      SpawnTree();
+      UpdateUI();
     }
     // Wire this to the tree button component 
     public void OnTreeClick()
@@ -49,10 +50,10 @@ public class Tree : MonoBehaviour
     }
     private void TreeDied()
     {
-      
       countDie ++;
       Debug.Log(countDie);
       wood += TreeWood;
+      wood += woodPoint;
       UpdateUI();
       SpawnTree();
     }
@@ -84,11 +85,15 @@ public class Tree : MonoBehaviour
     }
     public int Axe()
     {
-        return currentHitPoints -= 1;
+        return currentHitPoints -= hitPoint;
     }
-    public int UpgradeWoodMethod()
+    public int UpgradeWood()
+    {      
+      return woodPoint++;
+    }
+    public int UpgradeAxe()
     {
-      return woodUP.UpgradeWood() * GetWoodCount();
+      return hitPoint++;
     }
     IEnumerator SpawnDelay()
     {
