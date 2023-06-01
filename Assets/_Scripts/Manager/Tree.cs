@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,16 +11,19 @@ public class Tree : MonoBehaviour
     public TextMeshProUGUI woodText;
     public int maxHitPoints;
     public int currentHitPoints;
+    public float transitionTime = 0.2f;
     public Slider hitpointSlider;
     public TextMeshProUGUI hitPointText;
     public TreeData treeData;
     public Image treeImage;
     public TextMeshProUGUI treeNameText;
     public AreaManager areaManager;
+    public UpgradeWoodManager woodUP;
 
 
     private void Start()
     {
+        woodUP = FindAnyObjectByType<UpgradeWoodManager>();
         SpawnTree();
         UpdateUI();
     }
@@ -49,6 +54,7 @@ public class Tree : MonoBehaviour
     }
     private void SpawnTree()
     {
+      SpawnDelay();
       treeData = areaManager.GetTree();
       SetTreeData();
       currentHitPoints = maxHitPoints;
@@ -72,15 +78,18 @@ public class Tree : MonoBehaviour
     {
       return wood;
     }
-    // public int UpgradeWood()
-    // {
-    //    return GetWoodCount() * 2;
-    // }
     public int Axe()
     {
         return currentHitPoints -= 1;
     }
-
+    public int UpgradeWoodMethod()
+    {
+      return woodUP.UpgradeWood() * GetWoodCount();
+    }
+    IEnumerator SpawnDelay()
+    {
+        yield return new WaitForSeconds(transitionTime);
+    }
     void Update()
     {
         UpdateUI();

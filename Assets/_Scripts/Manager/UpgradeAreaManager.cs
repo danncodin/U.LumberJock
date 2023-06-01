@@ -1,14 +1,18 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 
-public class UpgradeWoodManager : MonoBehaviour
+public class UpgradeAreaManager : MonoBehaviour
 {
 
-    public TMP_Text upgradeWoodCostText;
+    public TMP_Text upgradeAreaCostText;
     public Tree vtree;
+    public Animator transition;
+    public float transitionTime = 1f;
     // public int upgradeWood;
     private int upgradeMultiplier = 1;
 
@@ -19,10 +23,10 @@ public class UpgradeWoodManager : MonoBehaviour
 
     public void FixedUpdate()
     {
-        upgradeWoodCostText.text = "Price: " + CalculateUpgradeCost();
+        upgradeAreaCostText.text = "Price: " + CalculateUpgradeCost();
     }
 
-    public void UpgradeWoodBuy()
+    public void UpgradeAreaBuy()
     {
 
         if (vtree.wood >= CalculateUpgradeCost())
@@ -31,21 +35,26 @@ public class UpgradeWoodManager : MonoBehaviour
 
             upgradeMultiplier++;
 
-            UpgradeWood();
-            Debug.Log(UpgradeWood());
+            LoadNextLevel();
 
-            upgradeWoodCostText.text = "Price: " + CalculateUpgradeCost();
+            upgradeAreaCostText.text = "Price: " + CalculateUpgradeCost();
         }
         Debug.Log("Quantidade de Madeiras: " + vtree.GetWoodCount());
         // Faça as ações necessárias para o upgrade
     }
     private int CalculateUpgradeCost()
     {
-        int baseCost = 25;
+        int baseCost = 10000;
         return baseCost * upgradeMultiplier;
     }
-    public int UpgradeWood()
+    public void LoadNextLevel()
     {
-        return 2;
+        SceneManager.LoadScene(1);
+    }
+    IEnumerator LoadLevel(int LevelIndex)
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(1);
     }
 }
