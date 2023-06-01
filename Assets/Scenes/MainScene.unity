@@ -3634,6 +3634,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AfricaLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 6752900938570165271, guid: dfb732cfc5dedc149bf3b20d06e7cd70, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8336350322804852130, guid: dfb732cfc5dedc149bf3b20d06e7cd70, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3716,6 +3720,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8336350322804852130, guid: dfb732cfc5dedc149bf3b20d06e7cd70, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202844001277423490, guid: dfb732cfc5dedc149bf3b20d06e7cd70, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

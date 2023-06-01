@@ -9,7 +9,6 @@ public class UpgradeWoodManager : MonoBehaviour
 
     public TMP_Text upgradeWoodCostText;
     public Tree vtree;
-    // public int upgradeWood;
     private int upgradeMultiplier = 1;
 
     void Start()
@@ -29,7 +28,7 @@ public class UpgradeWoodManager : MonoBehaviour
         {
             vtree.wood -= CalculateUpgradeCost();
 
-            upgradeMultiplier++;
+            upgradeMultiplier ++;
 
             UpgradeWood();
 
@@ -40,9 +39,9 @@ public class UpgradeWoodManager : MonoBehaviour
     }
     private int CalculateUpgradeCost()
     {
-        int baseCost = 25;
+        int baseCost = 30;
         return baseCost * upgradeMultiplier;
-    }
+    }    
     public int UpgradeWood()
     {
         return vtree.UpgradeWood();

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Tree : MonoBehaviour
 {
-    public int wood;
+    public double wood;
     public int TreeWood;
     public int countDie = 0;
     public int hitPoint = 1;
@@ -79,7 +79,7 @@ public class Tree : MonoBehaviour
         TreeWood = treeData.wood;
         treeNameText.text = treeData.name;
     }
-    public int GetWoodCount()
+    public double GetWoodCount()
     {
       return wood;
     }

@@ -2215,7 +2215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d083a514c4749ac43b80731d79a032dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  areaProfile: {fileID: 11400000, guid: 765142366d6151a418904094a52a8b9d, type: 2}
+  areaProfile: {fileID: 11400000, guid: 2e23fe0735676cd4caca595af4ea309a, type: 2}
 --- !u!4 &1272930147
 Transform:
   m_ObjectHideFlags: 0
@@ -2470,6 +2470,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wood: 0
   TreeWood: 0
+  countDie: 0
+  hitPoint: 1
+  woodPoint: 1
   woodText: {fileID: 1093674970}
   maxHitPoints: 10
   currentHitPoints: 0
@@ -2637,6 +2640,10 @@ PrefabInstance:
     - target: {fileID: 6752900938570165271, guid: ca0b405d709a9414c8b279123a326a0e, type: 3}
       propertyPath: m_Name
       value: EuropeLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752900938570165271, guid: ca0b405d709a9414c8b279123a326a0e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8336350322804852130, guid: ca0b405d709a9414c8b279123a326a0e, type: 3}
       propertyPath: m_Pivot.x
