@@ -8,6 +8,7 @@ public class Tree : MonoBehaviour
 {
     public int wood;
     public int TreeWood;
+    public int countDie = 0;
     public TextMeshProUGUI woodText;
     public int maxHitPoints;
     public int currentHitPoints;
@@ -48,6 +49,9 @@ public class Tree : MonoBehaviour
     }
     private void TreeDied()
     {
+      
+      countDie ++;
+      Debug.Log(countDie);
       wood += TreeWood;
       UpdateUI();
       SpawnTree();

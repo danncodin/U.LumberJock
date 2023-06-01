@@ -2470,6 +2470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wood: 0
   TreeWood: 0
+  countDie: 0
   woodText: {fileID: 1093674970}
   maxHitPoints: 10
   currentHitPoints: 0
@@ -3335,6 +3336,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 207869038}
     m_Modifications:
+    - target: {fileID: 1270775946511710591, guid: bb896a53a893b824982a53bfe7aa1b0d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -143
+      objectReference: {fileID: 0}
     - target: {fileID: 1429072334901991912, guid: bb896a53a893b824982a53bfe7aa1b0d, type: 3}
       propertyPath: m_Name
       value: UpgradeArea Manager

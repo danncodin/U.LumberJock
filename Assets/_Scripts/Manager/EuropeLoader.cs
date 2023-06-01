@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class AfricaLoader : MonoBehaviour
+public class EuropeLoader : MonoBehaviour
 {
     public Animator transition;
     public float transitionTime = 1f;
@@ -14,7 +14,7 @@ public class AfricaLoader : MonoBehaviour
     }
     public void LoadNextLevel()
     {
-        StartCoroutine(LoadLevel(1)); 
+        StartCoroutine(LoadLevel(0)); 
     }
     IEnumerator LoadLevel(int levelIndex)
     {
