@@ -49,12 +49,14 @@ public class UpgradeAreaManager : MonoBehaviour
     }
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene(1);
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1)); 
     }
-    IEnumerator LoadLevel(int LevelIndex)
+    IEnumerator LoadLevel(int levelIndex)
     {
         transition.SetTrigger("Start");
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(levelIndex);
     }
 }
