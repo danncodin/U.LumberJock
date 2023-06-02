@@ -1,30 +1,33 @@
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
-// using UnityEngine.UIElements;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
-// public class uiControler : MonoBehaviour
-// {
-//     public Button startButton;
-//     public Button messageButton;
-//     public Label messageText;
+public class UIControler : MonoBehaviour
+{
+    public GameObject pauseMenu;
+    public Button startButton;
+    public Button messageButton;
+    public Label messageText;
 
-//     void Start()
-//     {
-//         var root = GetComponent<UIDocument>().rootVisualElement;
+    void Start()
+    {
+        var root = GetComponent<UIDocument>().rootVisualElement;
 
-//         startButton = root.Q<Button>("start-button");
-//         messageButton = root.Q<Button>("message-button");
-//         messageText = root.Q<Label>("message-text");
-//     }
+        startButton = root.Q<Button>("start-button");
+        messageButton = root.Q<Button>("message-button");
+        messageText = root.Q<Label>("message-text");
+    }
 
-//     void StartButtonPressed()
-//     {
-//         SceneManager.LoadScene("game");
-//     }
+    void StartButtonPressed()
+    {
+        SceneManager.LoadScene("Main-Scene");
+    }
 
-//     void MessageButtonPressed()
-//     {
-
-//     }
-// }
+    void MessageButtonPressed()
+    {
+        messageText.text = "Hello!";
+        messageText.style.display = DisplayStyle.Flex;
+    }
+}

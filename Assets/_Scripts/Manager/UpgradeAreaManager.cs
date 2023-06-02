@@ -15,7 +15,6 @@ public class UpgradeAreaManager : MonoBehaviour
     public float transitionTime = 1f;
     // public int upgradeWood;
     private int upgradeMultiplier = 1;
-    public AudioSource upgradeAreaSound;
 
     void Start()
     {
@@ -32,7 +31,6 @@ public class UpgradeAreaManager : MonoBehaviour
 
         if (vtree.wood >= CalculateUpgradeCost())
         {
-            upgradeAreaSound.Play();
             vtree.wood -= CalculateUpgradeCost();
 
             upgradeMultiplier++;

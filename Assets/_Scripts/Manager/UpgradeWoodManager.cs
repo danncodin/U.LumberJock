@@ -10,8 +10,6 @@ public class UpgradeWoodManager : MonoBehaviour
     public TMP_Text upgradeWoodCostText;
     public Tree vtree;
     private int upgradeMultiplier = 1;
-    public AudioSource upgradeWoodSound;
-
     void Start()
     {
         vtree = FindAnyObjectByType<Tree>();
@@ -27,7 +25,6 @@ public class UpgradeWoodManager : MonoBehaviour
 
         if (vtree.wood >= CalculateUpgradeCost())
         {
-            upgradeWoodSound.Play();
             vtree.wood -= CalculateUpgradeCost();
 
             upgradeMultiplier ++;
