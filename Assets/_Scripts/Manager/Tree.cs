@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Tree : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class Tree : MonoBehaviour
     public int countDie = 0;
     public int hitPoint = 1;
     public int woodPoint = 1;
+    public GameObject woodPlus;
+    public GameObject woodPlusTEXT;
     public TextMeshProUGUI woodText;
     public int maxHitPoints;
     public int currentHitPoints;
@@ -35,6 +39,12 @@ public class Tree : MonoBehaviour
     // Wire this to the tree button component 
     public void OnTreeClick()
     {
+        // woodPlus.SetActive(false);
+        // woodPlus.transform.position = new Vector3(Random.Range(-5,-2), Random.Range(-2,2),0);
+        // woodPlus.SetActive(true);
+        // StopAllCoroutines();
+        // StartCoroutine(Fly());
+        Instantiate(woodPlus, transform.position, transform.rotation);
         treeChopSound.Play();
         TreeDamaged();
         GetWoodCount();
@@ -60,6 +70,7 @@ public class Tree : MonoBehaviour
       wood += TreeWood;
       wood += woodPoint;
       UpdateUI();
+      Instantiate(woodPlusTEXT,transform.position, transform.rotation);
       SpawnTree();
     }
     private void SpawnTree()
@@ -74,7 +85,7 @@ public class Tree : MonoBehaviour
     {
       hitPointText.text = currentHitPoints + " HP";
       hitpointSlider.value = currentHitPoints / (float) maxHitPoints;
-      woodText.text = "Wood: " + GetWoodCount();
+      woodText.text = "" + GetWoodCount();
     }
     // Get next Tree profile from scriptable object
     private void SetTreeData()
@@ -84,6 +95,16 @@ public class Tree : MonoBehaviour
         TreeWood = treeData.wood;
         treeNameText.text = treeData.name;
     }
+    // IEnumerator Fly()
+    // {
+    //   for(int i = 0; i<=0;i++)
+    //   {
+    //     yield return new WaitForSeconds(.2f);
+    //     woodPlus.transform.position = new Vector3(woodPlus.transform.position.x, woodPlus.transform.position.y +2,0);
+    //   }
+
+    //   woodPlus.SetActive(false);
+    // }
     public double GetWoodCount()
     {
       return wood;

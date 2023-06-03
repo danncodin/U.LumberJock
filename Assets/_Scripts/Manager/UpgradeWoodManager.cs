@@ -19,7 +19,7 @@ public class UpgradeWoodManager : MonoBehaviour
 
     public void FixedUpdate()
     {
-        upgradeWoodCostText.text = "Preço: " + CalculateUpgradeCost();
+        upgradeWoodCostText.text = "" + CalculateUpgradeCost();
     }
 
     public void UpgradeWoodBuy()
@@ -32,7 +32,7 @@ public class UpgradeWoodManager : MonoBehaviour
             upgradeMultiplier ++;
             UpgradeWood();
             levelUpgradeText.text = "" + levelUpgrade;
-            upgradeWoodCostText.text = "Preço: " + CalculateUpgradeCost();
+            upgradeWoodCostText.text = "" + CalculateUpgradeCost();
         }
         Debug.Log("Quantidade de Madeiras: " + vtree.GetWoodCount());
         // Faça as ações necessárias para o upgrade
