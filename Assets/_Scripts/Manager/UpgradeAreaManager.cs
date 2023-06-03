@@ -10,7 +10,10 @@ public class UpgradeAreaManager : MonoBehaviour
 {
 
     public TMP_Text upgradeAreaCostText;
+    public TMP_Text levelUpgradeText;
     public Tree vtree;
+    public int levelUpgrade;
+
     public Animator transition;
     public float transitionTime = 1f;
     // public int upgradeWood;
@@ -23,7 +26,7 @@ public class UpgradeAreaManager : MonoBehaviour
 
     public void FixedUpdate()
     {
-        upgradeAreaCostText.text = "Price: " + CalculateUpgradeCost();
+        upgradeAreaCostText.text = "Preço: " + CalculateUpgradeCost();
     }
 
     public void UpgradeAreaBuy()
@@ -32,19 +35,18 @@ public class UpgradeAreaManager : MonoBehaviour
         if (vtree.wood >= CalculateUpgradeCost())
         {
             vtree.wood -= CalculateUpgradeCost();
-
-            upgradeMultiplier++;
-
+            levelUpgrade++;
+            upgradeMultiplier ++;
             LoadNextLevel(1);
-
-            upgradeAreaCostText.text = "Price: " + CalculateUpgradeCost();
+            levelUpgradeText.text = "" + levelUpgrade;
+            upgradeAreaCostText.text = "Preço: " + CalculateUpgradeCost();
         }
         Debug.Log("Quantidade de Madeiras: " + vtree.GetWoodCount());
         // Faça as ações necessárias para o upgrade
     }
     private int CalculateUpgradeCost()
     {
-        int baseCost = 1;
+        int baseCost = 500;
         return baseCost * upgradeMultiplier;
     }
     public void LoadNextLevel(int levelIndex)
