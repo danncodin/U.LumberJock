@@ -127,6 +127,19 @@ public class Tree : MonoBehaviour
     }
     void Update()
     {
-        UpdateUI();
-    }
+      UpdateUI();
+      Convert.ToInt32(countDie);
+      if (countDie == 0)
+      {
+        Debug.Log("Derrube uma árvore");
+      }
+      if (countDie == 1)
+      {
+        Debug.Log("Clicke no Diário do Jock");
+      }
+      if (countDie == 3)
+      {
+        Debug.Log("Compre um Upgrade");
+      }
+  }
 }

@@ -46,7 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeAreaCostText: {fileID: 0}
+  levelUpgradeText: {fileID: 0}
   vtree: {fileID: 0}
+  levelUpgrade: 0
   transition: {fileID: 856575559416345389}
   transitionTime: 1
 --- !u!1 &1684368682572336441
