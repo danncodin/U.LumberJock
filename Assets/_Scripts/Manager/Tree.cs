@@ -125,21 +125,24 @@ public class Tree : MonoBehaviour
     {
         yield return new WaitForSeconds(transitionTime);
     }
+    public int CountDie()
+    {
+      return countDie;
+    }
     void Update()
     {
       UpdateUI();
-      Convert.ToInt32(countDie);
-      if (countDie == 0)
-      {
-        Debug.Log("Derrube uma árvore");
-      }
-      if (countDie == 1)
-      {
-        Debug.Log("Clicke no Diário do Jock");
-      }
-      if (countDie == 3)
-      {
-        Debug.Log("Compre um Upgrade");
-      }
+      // if (countDie == 0)
+      // {
+      //   Debug.Log("Derrube uma árvore");
+      // }
+      // if (countDie == 1)
+      // {
+      //   Debug.Log("Clicke no Diário do Jock");
+      // }
+      // if (countDie == 3)
+      // {
+      //   Debug.Log("Compre um Upgrade");
+      // }
   }
 }

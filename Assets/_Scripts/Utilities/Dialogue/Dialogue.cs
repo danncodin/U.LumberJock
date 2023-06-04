@@ -9,9 +9,7 @@ using Random = UnityEngine.Random;
 [System.Serializable]
 public class Dialogue
 {
-
-    public Image characterImage;
     public string name; 
-    [TextArea(3, 10)]
+    [TextArea(1, 10)]
     public string[] sentences;
 }
