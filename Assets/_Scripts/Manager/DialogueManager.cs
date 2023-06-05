@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text actorName;
     public TMP_Text messageText;
     public RectTransform backgroundBox;
+    public GameObject jock; 
 
     Message[] currentMessages;
     Actor[] currentActors;
@@ -27,6 +28,7 @@ public class DialogueManager : MonoBehaviour
 
         Debug.Log("Started conversation! Loaded messages: " + messages.Length);
         DisplayMessage();
+        backgroundBox.LeanScale(Vector3.one, 0.5f).setEaseInOutExpo();
     }
     void DisplayMessage()
     {
@@ -36,6 +38,8 @@ public class DialogueManager : MonoBehaviour
         Actor actorToDisplay = currentActors[messageToDisplay.actorId];  
         actorName.text = actorToDisplay.name;
         actorImage.sprite = actorToDisplay.sprite;
+
+        AnimateTextColor();
     }
     public void NextMessage()
     {
@@ -46,28 +50,32 @@ public class DialogueManager : MonoBehaviour
         }else
         {
             Debug.Log("Conversation ended!");
+            backgroundBox.LeanScale(Vector3.zero, 0.5f).setEaseInOutExpo();
             isActive = false;
         }
-
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(currentMessages[activeMessage].message));
     }
 
-    IEnumerator TypeSentence (string sentence)
+    void AnimateTextColor()
     {
-        messageText.text = "";
-        foreach(char letter in sentence.ToCharArray())
-        {
-            messageText.text += letter;
-            yield return null;
-        }
+        LeanTween.textAlpha(messageText.rectTransform, 0, 0);
+        LeanTween.textAlpha(messageText.rectTransform, 1, 0.5f);
+    }
+    void Start() 
+    {    
+        jock.gameObject.SetActive(false);
+        backgroundBox.transform.localScale = Vector3.zero;
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && isActive == true)
         {
             NextMessage();
         }
+    }
+
+    void OnMouseDown()
+    {
+        NextMessage();
     }
 }
 

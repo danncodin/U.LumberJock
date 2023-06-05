@@ -134,14 +134,14 @@ public class Tree : MonoBehaviour
     void Update()
     {
       UpdateUI();
-      if (countDie == 0)
-      {
+      // if (countDie == 0)
+      // {
         
-        // dialogueTrigger.StartDialogue();
-      }
-      if (countDie == 3)
-      {
-        dialogueTriggerButton.gameObject.SetActive(true);
-      }
+      //   // dialogueTrigger.StartDialogue();
+      // }
+      // if (countDie == 3)
+      // {
+      //   dialogueTriggerButton.gameObject.SetActive(true);
+      // }
   }
 }
