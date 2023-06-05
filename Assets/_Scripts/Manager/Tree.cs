@@ -11,6 +11,7 @@ public class Tree : MonoBehaviour
     public double wood;
     public int TreeWood;
     public int countDie = 0;
+    public int countClick = 0;
     public int hitPoint = 1;
     public int woodPoint = 1;
     public GameObject woodPlus;
@@ -46,6 +47,7 @@ public class Tree : MonoBehaviour
         // woodPlus.SetActive(true);
         // StopAllCoroutines();
         // StartCoroutine(Fly());
+
         Instantiate(woodPlus, transform.position, transform.rotation);
         treeChopSound.Play();
         TreeDamaged();

@@ -18,8 +18,8 @@ public class WoodPlus : MonoBehaviour
         timer = 0;
         canvas = GameObject.Find("Canvas");
         transform.SetParent(canvas.transform);
-        x = Random.Range(-640, -250);
-        y = Random.Range(-200, 152);
+        x = Random.Range(-778, 275);
+        y = Random.Range(-346, 222);
 
         //Code Youtube Video
         // x = Random.Range(-150, 151);
