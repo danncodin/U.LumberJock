@@ -28,6 +28,8 @@ public class Tree : MonoBehaviour
     public UpgradeAreaManager woodUP;
     public AudioSource treeChopSound;
     public AudioSource treeDiyngSound;
+    public GameObject dialogueTriggerButton;
+    public DialogueTrigger dialogueTrigger;
     
 
     private void Start()
@@ -132,17 +134,14 @@ public class Tree : MonoBehaviour
     void Update()
     {
       UpdateUI();
-      // if (countDie == 0)
-      // {
-      //   Debug.Log("Derrube uma árvore");
-      // }
-      // if (countDie == 1)
-      // {
-      //   Debug.Log("Clicke no Diário do Jock");
-      // }
-      // if (countDie == 3)
-      // {
-      //   Debug.Log("Compre um Upgrade");
-      // }
+      if (countDie == 0)
+      {
+        
+        // dialogueTrigger.StartDialogue();
+      }
+      if (countDie == 3)
+      {
+        dialogueTriggerButton.gameObject.SetActive(true);
+      }
   }
 }

@@ -1,31 +1,32 @@
-using System.Threading;
 using System;
-using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
-public class DialogueTrigger : MonoBehaviour
+public class DialogueTrigger: MonoBehaviour
 {
-    public Dialogue dialogue;
-    // public Tree tree;
-    public void TriggerDialogue ()
+    public Message[] messages;
+    public Actor[] actors;
+    public void StartDialogue()
     {
-        // tree = FindAnyObjectByType<Tree>();
-
-        // if (tree.CountDie() == 1)
-        // {
-        //     FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-        // }
-        // {
-        //     FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-
-        // }
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        FindAnyObjectByType<DialogueManager>().OpenDialogue(messages, actors);
     }
-    // public int CountDie()
-    // {
-    //     return tree.CountDie();
-    // }
-   
+}
+
+[System.Serializable]
+public class Message
+{
+    public int actorId; 
+    public string message;
+
+}
+
+[System.Serializable]
+public class Actor
+{
+    public string name;
+    public Sprite sprite;
 }
