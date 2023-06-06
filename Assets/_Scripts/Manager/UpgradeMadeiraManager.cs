@@ -4,14 +4,14 @@ using TMPro;
 
 
 
-public class UpgradeWoodManager : MonoBehaviour
+public class UpgradeMadeiraManager : MonoBehaviour
 {
 
-    public TMP_Text upgradeWoodCostText;
+    public TMP_Text upgradeMadeiraCostText;
     public TMP_Text levelUpgradeText;
     public Tree vtree;
     public int levelUpgrade = 0;
-    private int upgradeMultiplier = 1;
+    public int upgradeMultiplier = 1;        
     void Start()
     {
         vtree = FindAnyObjectByType<Tree>();
@@ -19,20 +19,20 @@ public class UpgradeWoodManager : MonoBehaviour
 
     public void FixedUpdate()
     {
-        upgradeWoodCostText.text = "" + CalculateUpgradeCost();
+        upgradeMadeiraCostText.text = "" + CalculateUpgradeCost();
     }
 
-    public void UpgradeWoodBuy()
+    public void UpgradeMadeiraBuy()
     {
 
         if (vtree.wood >= CalculateUpgradeCost())
         {
             vtree.wood -= CalculateUpgradeCost();
             levelUpgrade++;
-            upgradeMultiplier ++;
-            UpgradeWood();
-            levelUpgradeText.text = "" + levelUpgrade;
-            upgradeWoodCostText.text = "" + CalculateUpgradeCost();
+            upgradeMultiplier++;
+            UpgradeMadeira();
+            levelUpgradeText.text= "" + levelUpgrade;
+            upgradeMadeiraCostText.text = "" + CalculateUpgradeCost();
         }
         Debug.Log("Quantidade de Madeiras: " + vtree.GetWoodCount());
         // Faça as ações necessárias para o upgrade
@@ -41,9 +41,9 @@ public class UpgradeWoodManager : MonoBehaviour
     {
         double baseCost = 15;
         return Math.Round((Math.Pow((baseCost * upgradeMultiplier),  1.2)));
-    } 
-    public int UpgradeWood()
+    }
+    public double UpgradeMadeira()
     {
-        return vtree.UpgradeWood();
+        return vtree.UpgradeMadeira();
     }
 }

@@ -12,6 +12,7 @@ public class Tree : MonoBehaviour
     public int TreeWood;
     public int countDie = 0;
     public int countClick = 0;
+    public int upgradeMadeiraCount = 0;
     public int hitPoint = 1;
     public int woodPoint = 1;
     public GameObject woodPlus;
@@ -47,9 +48,11 @@ public class Tree : MonoBehaviour
         // woodPlus.SetActive(true);
         // StopAllCoroutines();
         // StartCoroutine(Fly());
-
+        // CountClick();
+        Debug.Log("CountClick " + countClick);
         Instantiate(woodPlus, transform.position, transform.rotation);
         treeChopSound.Play();
+        ClickMadeiraUP();
         TreeDamaged();
         GetWoodCount();
     }
@@ -117,7 +120,7 @@ public class Tree : MonoBehaviour
     {
         return currentHitPoints -= hitPoint;
     }
-    public int UpgradeWood()
+    public int UpgradeBolsa()
     {      
       return woodPoint++;
     }
@@ -133,6 +136,23 @@ public class Tree : MonoBehaviour
     {
       return countDie;
     }
+    public double UpgradeMadeira()
+    {
+      countClick++;
+      return upgradeMadeiraCount++;
+    }
+    public void ClickMadeiraUP()
+    {
+      if (upgradeMadeiraCount >= 1 )
+      {
+        double madeira = wood += countClick;
+      }
+      
+    }
+    // public int CountClick()
+    // {
+    //   return countClick++;
+    // }
     void Update()
     {
       UpdateUI();
