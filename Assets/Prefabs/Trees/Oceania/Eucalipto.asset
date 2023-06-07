@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37867c8fb623ba942a8997e56224f218, type: 3}
   m_Name: Eucalipto
   m_EditorClassIdentifier: 
-  BaseHitPoints: 0
+  BaseHitPoints: 39
   wood: 0
-  TreeImage: {fileID: 0}
+  TreeImage: {fileID: 21300000, guid: c765811490e2fb442bfd9dd318a66f76, type: 3}

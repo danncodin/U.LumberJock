@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37867c8fb623ba942a8997e56224f218, type: 3}
   m_Name: Kauri
   m_EditorClassIdentifier: 
-  BaseHitPoints: 0
+  BaseHitPoints: 60
   wood: 0
-  TreeImage: {fileID: 0}
+  TreeImage: {fileID: 21300000, guid: 3adf7ebeb580a864491eadb545b328b3, type: 3}

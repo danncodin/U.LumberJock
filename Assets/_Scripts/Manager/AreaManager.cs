@@ -5,17 +5,19 @@ using UnityEngine;
 public class AreaManager : MonoBehaviour
 {
     public AreaProfile areaProfile;
+    private int currentIndex = 0;
     
-    public TreeData GetTree()
+    public TreeData GetNextTree()
+{
+    if (currentIndex >= areaProfile.availableTreeProfiles.Count)
     {
-        // var treeData = areaProfile.availableTreeProfiles[0];
-        // Get a random tree profile from the list of trees in areaProfile
-        // for (int i = 0; i < ; i++)
-        // {
-            
-        // }
-        
-        int index = Random.Range(0, areaProfile.availableTreeProfiles.Count);
-        return areaProfile.availableTreeProfiles[index];
+        currentIndex = 0; // Reinicie o índice se chegarmos ao final da lista
     }
+    
+    TreeData treeData = areaProfile.availableTreeProfiles[currentIndex];
+    currentIndex++;
+    
+    return treeData;
+}
+
 }

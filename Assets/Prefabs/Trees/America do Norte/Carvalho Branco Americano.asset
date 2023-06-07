@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHitPoints: 0
   wood: 0
-  TreeImage: {fileID: 0}
+  TreeImage: {fileID: 21300000, guid: 12aa32daee641b84682c652b073bc619, type: 3}

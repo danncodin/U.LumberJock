@@ -83,7 +83,7 @@ public class Tree : MonoBehaviour
     private void SpawnTree()
     {
       SpawnDelay();
-      treeData = areaManager.GetTree();
+      TreeData nextTreeData = areaManager.GetNextTree();
       SetTreeData();
       currentHitPoints = maxHitPoints;
       UpdateUI();
@@ -149,6 +149,7 @@ public class Tree : MonoBehaviour
       }
       
     }
+    
     // public int CountClick()
     // {
     //   return countClick++;

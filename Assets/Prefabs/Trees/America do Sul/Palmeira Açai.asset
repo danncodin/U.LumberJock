@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37867c8fb623ba942a8997e56224f218, type: 3}
-  m_Name: "Palmeira-Ju\xE7ara"
+  m_Name: "Palmeira A\xE7ai"
   m_EditorClassIdentifier: 
   BaseHitPoints: 0
   wood: 0
-  TreeImage: {fileID: 0}
+  TreeImage: {fileID: 21300000, guid: 7adafbce901e04c4db6b19550d2ee28e, type: 3}
