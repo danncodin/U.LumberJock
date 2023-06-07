@@ -26,12 +26,17 @@ public class Tree : MonoBehaviour
     public TreeData treeData;
     public Image treeImage;
     public TextMeshProUGUI treeNameText;
-    public AreaManager areaManager;
+    public AreaProfile areaProfile;
+    public AreaOrderManager areaOrderManager;
+    public AreaRandomManager areaRandomManager;
     public UpgradeAreaManager woodUP;
     public AudioSource treeChopSound;
     public AudioSource treeDiyngSound;
     public GameObject dialogueTriggerButton;
-    public DialogueTrigger dialogueTrigger;
+    public DialogueTrigger dialogueTrigger1;
+    public DialogueTrigger dialogueTrigger2;
+    public DialogueTrigger dialogueTrigger3;
+    public DialogueTrigger dialogueTrigger4;
     
 
     private void Start()
@@ -83,7 +88,15 @@ public class Tree : MonoBehaviour
     private void SpawnTree()
     {
       SpawnDelay();
-      TreeData nextTreeData = areaManager.GetNextTree();
+      //ORDER
+      if(countDie <  areaProfile.availableTreeProfiles.Count)
+      {
+        TreeData nextTreeData = areaOrderManager.GetNextTree();
+        treeData = nextTreeData;
+      }else
+      {
+        treeData = areaRandomManager.GetTree();
+      }
       SetTreeData();
       currentHitPoints = maxHitPoints;
       UpdateUI();
@@ -159,8 +172,7 @@ public class Tree : MonoBehaviour
       UpdateUI();
       // if (countDie == 0)
       // {
-        
-      //   // dialogueTrigger.StartDialogue();
+
       // }
       // if (countDie == 3)
       // {
