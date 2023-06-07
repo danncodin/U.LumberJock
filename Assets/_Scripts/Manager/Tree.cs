@@ -33,14 +33,18 @@ public class Tree : MonoBehaviour
     public AudioSource treeChopSound;
     public AudioSource treeDiyngSound;
     public GameObject dialogueTriggerButton;
-    public DialogueTrigger dialogueTrigger1;
-    public DialogueTrigger dialogueTrigger2;
-    public DialogueTrigger dialogueTrigger3;
-    public DialogueTrigger dialogueTrigger4;
+    public GameObject dialogueTrigger1;
+    public GameObject dialogueTrigger2;
+    public GameObject dialogueTrigger3;
+    public GameObject dialogueTrigger4;
     
 
     private void Start()
     {
+      if (countDie == 0)
+      {
+        dialogueTrigger1.SetActive(true);
+      }
       woodUP = FindAnyObjectByType<UpgradeAreaManager>();
       SpawnTree();
       UpdateUI();
@@ -99,6 +103,7 @@ public class Tree : MonoBehaviour
       }
       SetTreeData();
       currentHitPoints = maxHitPoints;
+      Dialogue();
       UpdateUI();
     }
     private void UpdateUI()
@@ -125,6 +130,16 @@ public class Tree : MonoBehaviour
 
     //   woodPlus.SetActive(false);
     // }
+    public void Dialogue()
+    {
+      if(countDie <  areaProfile.availableTreeProfiles.Count)
+      {
+        if (countDie == 1)
+        {
+          dialogueTrigger2.SetActive(true);
+        }  
+      }
+    }
     public double GetWoodCount()
     {
       return wood;
@@ -170,13 +185,5 @@ public class Tree : MonoBehaviour
     void Update()
     {
       UpdateUI();
-      // if (countDie == 0)
-      // {
-
-      // }
-      // if (countDie == 3)
-      // {
-      //   dialogueTriggerButton.gameObject.SetActive(true);
-      // }
-  }
+    }
 }

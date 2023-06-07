@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour
 
     Message[] currentMessages;
     Actor[] currentActors;
+    public Tree vtree;
     int activeMessage = 0;
     public static bool isActive = false;
 
@@ -51,17 +52,20 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.Log("Conversation ended!");
             backgroundBox.LeanScale(Vector3.zero, 0.5f).setEaseInOutExpo();
+            vtree.dialogueTrigger1.SetActive(false);
             isActive = false;
         }
     }
 
     void AnimateTextColor()
     {
+        
         LeanTween.textAlpha(messageText.rectTransform, 0, 0);
         LeanTween.textAlpha(messageText.rectTransform, 1, 0.5f);
     }
     void Start() 
     {    
+        vtree = FindAnyObjectByType<Tree>();
         jock.gameObject.SetActive(false);
         backgroundBox.transform.localScale = Vector3.zero;
     }
