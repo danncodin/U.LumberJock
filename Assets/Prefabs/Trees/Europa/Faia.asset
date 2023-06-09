@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37867c8fb623ba942a8997e56224f218, type: 3}
   m_Name: Faia
   m_EditorClassIdentifier: 
-  BaseHitPoints: 10
-  wood: 4
+  BaseHitPoints: 21
+  wood: 8
   TreeImage: {fileID: 21300000, guid: fc3f8ba8122b80440a2c3a5256f9e65c, type: 3}

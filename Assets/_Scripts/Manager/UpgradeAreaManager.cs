@@ -55,7 +55,7 @@ public class UpgradeAreaManager : MonoBehaviour
     }
     private int CalculateUpgradeCost()
     {
-        int baseCost = 500;
+        int baseCost = 700;
         return baseCost * upgradeMultiplier;
     }
     public void LoadNextLevel(int levelIndex)

@@ -39,8 +39,8 @@ public class UpgradeAxeManager : MonoBehaviour
     }
     private double CalculateUpgradeCost()
     {
-        double baseCost = 15;
-        return Math.Round((Math.Pow((baseCost * upgradeMultiplier),  1.2)));
+        double baseCost = 25;
+        return Math.Round((Math.Pow((baseCost * upgradeMultiplier),  2)));
     }
     public int UpgradeAxe()
     {
