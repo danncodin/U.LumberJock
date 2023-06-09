@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Sequoia
   m_EditorClassIdentifier: 
   BaseHitPoints: 9000000
-  wood: 0
+  wood: 5000000
   TreeImage: {fileID: 21300000, guid: 35a4b15db60ea3d49a9b6339072dd93c, type: 3}

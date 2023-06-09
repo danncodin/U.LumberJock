@@ -1,11 +1,5 @@
 {
   "dependencies": {
-    "com.danielmarto.tools": {
-      "version": "file:C:/Users/Daniel Marto/Documents/UnityPackages/Tools",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {}
-    },
     "com.unity.2d.animation": {
       "version": "7.0.10",
       "depth": 1,

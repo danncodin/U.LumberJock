@@ -17,6 +17,7 @@ public class DialogueManager : MonoBehaviour
     Message[] currentMessages;
     Actor[] currentActors;
     public Tree vtree;
+    public UpgradeAreaManager varea;
     int activeMessage = 0;
     public static bool isActive = false;
 
@@ -27,7 +28,6 @@ public class DialogueManager : MonoBehaviour
         activeMessage = 0;
         isActive = true; 
 
-        Debug.Log("Started conversation! Loaded messages: " + messages.Length);
         DisplayMessage();
         backgroundBox.LeanScale(Vector3.one, 0.5f).setEaseInOutExpo();
     }
@@ -52,7 +52,11 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.Log("Conversation ended!");
             backgroundBox.LeanScale(Vector3.zero, 0.5f).setEaseInOutExpo();
+
             vtree.dialogueTrigger1.SetActive(false);
+            vtree.dialogueTrigger2.SetActive(false);
+            vtree.dialogueTrigger3.SetActive(false);
+            varea.dialogueTrigger4.SetActive(false);
             isActive = false;
         }
     }
@@ -66,6 +70,7 @@ public class DialogueManager : MonoBehaviour
     void Start() 
     {    
         vtree = FindAnyObjectByType<Tree>();
+        
         jock.gameObject.SetActive(false);
         backgroundBox.transform.localScale = Vector3.zero;
     }

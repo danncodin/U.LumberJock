@@ -58,7 +58,6 @@ public class Tree : MonoBehaviour
         // StopAllCoroutines();
         // StartCoroutine(Fly());
         // CountClick();
-        Debug.Log("CountClick " + countClick);
         Instantiate(woodPlus, transform.position, transform.rotation);
         treeChopSound.Play();
         ClickMadeiraUP();
@@ -82,7 +81,6 @@ public class Tree : MonoBehaviour
     private void TreeDied()
     {
       countDie ++;
-      Debug.Log(countDie);
       wood += TreeWood;
       wood += woodPoint;
       UpdateUI();
@@ -132,12 +130,18 @@ public class Tree : MonoBehaviour
     // }
     public void Dialogue()
     {
+      Debug.Log("countDie: " + countDie);
       if(countDie <  areaProfile.availableTreeProfiles.Count)
       {
         if (countDie == 1)
         {
           dialogueTrigger2.SetActive(true);
         }  
+        if (upgradeMadeiraCount == 1)
+        {
+          dialogueTrigger3.SetActive(true);
+        }
+
       }
     }
     public double GetWoodCount()
@@ -175,7 +179,6 @@ public class Tree : MonoBehaviour
       {
         double madeira = wood += countClick;
       }
-      
     }
     
     // public int CountClick()

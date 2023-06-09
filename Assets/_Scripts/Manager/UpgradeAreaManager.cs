@@ -13,6 +13,7 @@ public class UpgradeAreaManager : MonoBehaviour
     public TMP_Text levelUpgradeText;
     public Tree vtree;
     public int levelUpgrade;
+    public GameObject dialogueTrigger4;
 
     public Animator transition;
     public float transitionTime = 1f;
@@ -34,15 +35,23 @@ public class UpgradeAreaManager : MonoBehaviour
 
         if (vtree.wood >= CalculateUpgradeCost())
         {
-            vtree.wood -= CalculateUpgradeCost();
-            levelUpgrade++;
-            upgradeMultiplier ++;
-            LoadNextLevel(1);
-            levelUpgradeText.text = "" + levelUpgrade;
-            upgradeAreaCostText.text = "" + CalculateUpgradeCost();
+            dialogueTrigger4.SetActive(true);
+            StartCoroutine(WaitForDialogueTrigger());
+
         }
         Debug.Log("Quantidade de Madeiras: " + vtree.GetWoodCount());
         // Faça as ações necessárias para o upgrade
+    }
+    private IEnumerator WaitForDialogueTrigger()
+    {
+        yield return new WaitUntil(() => !dialogueTrigger4.activeSelf);
+
+        vtree.wood -= CalculateUpgradeCost();
+        levelUpgrade++;
+        upgradeMultiplier++;
+        LoadNextLevel(1);
+        levelUpgradeText.text = "" + levelUpgrade;
+        upgradeAreaCostText.text = "" + CalculateUpgradeCost();
     }
     private int CalculateUpgradeCost()
     {
