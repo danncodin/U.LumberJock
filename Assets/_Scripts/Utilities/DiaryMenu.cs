@@ -26,11 +26,13 @@ public class DiaryMenu : MonoBehaviour
     public void ReturnGame()
     {
         diaryMenuUI.SetActive(false);
+        FindObjectOfType<AudioManager>().Play("Interação com o Menu");
         DiaryMenuIsOpen = false;
     }
     void DiaryOpen()
     {
         diaryMenuUI.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("Interação com o Menu");
         DiaryMenuIsOpen = true;
     }
 }

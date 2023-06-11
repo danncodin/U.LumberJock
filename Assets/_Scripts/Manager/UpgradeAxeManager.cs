@@ -28,6 +28,7 @@ public class UpgradeAxeManager : MonoBehaviour
         if (vtree.wood >= CalculateUpgradeCost())
         {
             vtree.wood -= CalculateUpgradeCost();
+            FindObjectOfType<AudioManager>().Play("UpgradeSound");
             levelUpgrade++;
             upgradeMultiplier++;
             UpgradeAxe();
@@ -40,7 +41,7 @@ public class UpgradeAxeManager : MonoBehaviour
     private double CalculateUpgradeCost()
     {
         double baseCost = 25;
-        return Math.Round((Math.Pow((baseCost * upgradeMultiplier),  2)));
+        return Math.Round((Math.Pow((baseCost * upgradeMultiplier),  1.3)));
     }
     public int UpgradeAxe()
     {

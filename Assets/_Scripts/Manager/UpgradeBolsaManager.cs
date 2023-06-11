@@ -29,6 +29,7 @@ public class UpgradeBolsaManager : MonoBehaviour
         {
             vtree.wood -= CalculateUpgradeCost();
             levelUpgrade++;
+            FindObjectOfType<AudioManager>().Play("UpgradeSound");
             upgradeMultiplier ++;
             UpgradeBolsa();
             levelUpgradeText.text = "" + levelUpgrade;
@@ -40,7 +41,7 @@ public class UpgradeBolsaManager : MonoBehaviour
     private double CalculateUpgradeCost()
     {
         double baseCost = 15;
-        return Math.Round((Math.Pow((baseCost * upgradeMultiplier),  2)));
+        return Math.Round((Math.Pow((baseCost * upgradeMultiplier),  1.3))); //1.2
     } 
     public int UpgradeBolsa()
     {

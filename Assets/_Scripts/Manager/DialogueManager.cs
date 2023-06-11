@@ -23,6 +23,7 @@ public class DialogueManager : MonoBehaviour
 
     public void OpenDialogue(Message[] messages, Actor[] actors)
     {
+        jock.gameObject.SetActive(false);
         currentMessages = messages;
         currentActors = actors;
         activeMessage = 0;
@@ -58,6 +59,7 @@ public class DialogueManager : MonoBehaviour
             vtree.dialogueTrigger3.SetActive(false);
             varea.dialogueTrigger4.SetActive(false);
             isActive = false;
+            jock.gameObject.SetActive(true);
         }
     }
 
@@ -71,7 +73,7 @@ public class DialogueManager : MonoBehaviour
     {    
         vtree = FindAnyObjectByType<Tree>();
         
-        jock.gameObject.SetActive(false);
+        
         backgroundBox.transform.localScale = Vector3.zero;
     }
     void Update()

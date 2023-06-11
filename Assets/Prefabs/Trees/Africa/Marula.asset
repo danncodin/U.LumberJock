@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37867c8fb623ba942a8997e56224f218, type: 3}
   m_Name: Marula
   m_EditorClassIdentifier: 
-  BaseHitPoints: 41
+  BaseHitPoints: 22
   wood: 13
   TreeImage: {fileID: 21300000, guid: 1e8f898c25d36f741aa1fe8cad8e481d, type: 3}

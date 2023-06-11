@@ -30,7 +30,9 @@ public class Tree : MonoBehaviour
     public AreaOrderManager areaOrderManager;
     public AreaRandomManager areaRandomManager;
     public UpgradeAreaManager woodUP;
-    public AudioSource treeChopSound;
+    public AudioClip[] sounds;
+    public AudioManager audioManager;
+    private AudioSource audioSource;
     public AudioSource treeDiyngSound;
     public GameObject dialogueTriggerButton;
     public GameObject dialogueTrigger1;
@@ -46,6 +48,11 @@ public class Tree : MonoBehaviour
         dialogueTrigger1.SetActive(true);
       }
       woodUP = FindAnyObjectByType<UpgradeAreaManager>();
+      AudioManager audioManager = GetComponent<AudioManager>();
+      audioSource = gameObject.AddComponent<AudioSource>();
+      audioSource.volume = 0.7f;
+      audioSource.playOnAwake = false;
+      audioSource.spatialBlend = 0f;
       SpawnTree();
       UpdateUI();
     }
@@ -59,7 +66,6 @@ public class Tree : MonoBehaviour
         // StartCoroutine(Fly());
         // CountClick();
         Instantiate(woodPlus, transform.position, transform.rotation);
-        treeChopSound.Play();
         ClickMadeiraUP();
         TreeDamaged();
         GetWoodCount();
@@ -67,7 +73,7 @@ public class Tree : MonoBehaviour
 
     void TreeDamaged()
     {
-      treeDiyngSound.Play();
+      PlayRandomSound();
       Axe();
       UpdateUI();
       CheckForTreeDeath();
@@ -80,6 +86,7 @@ public class Tree : MonoBehaviour
     }
     private void TreeDied()
     {
+      FindObjectOfType<AudioManager>().Play("FallTree");
       countDie ++;
       wood += TreeWood;
       wood += woodPoint;
@@ -147,6 +154,19 @@ public class Tree : MonoBehaviour
     public double GetWoodCount()
     {
       return wood;
+    }
+    public void PlayRandomSound()
+    {
+        if (sounds.Length == 0)
+        {
+            Debug.LogWarning("No sounds available to play.");
+            return;
+        }
+
+        int randomIndex = Random.Range(0, sounds.Length);
+        AudioClip randomSound = sounds[randomIndex];
+
+        audioSource.PlayOneShot(randomSound);
     }
     public int Axe()
     {

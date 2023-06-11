@@ -28,6 +28,7 @@ public class UpgradeMadeiraManager : MonoBehaviour
         if (vtree.wood >= CalculateUpgradeCost())
         {
             vtree.wood -= CalculateUpgradeCost();
+            FindObjectOfType<AudioManager>().Play("UpgradeSound");
             levelUpgrade++;
             upgradeMultiplier++;
             UpgradeMadeira();
@@ -40,7 +41,7 @@ public class UpgradeMadeiraManager : MonoBehaviour
     private double CalculateUpgradeCost()
     {
         double baseCost = 10;
-        return Math.Round((Math.Pow((baseCost * upgradeMultiplier),  2)));
+        return Math.Round((Math.Pow((baseCost * upgradeMultiplier),  1.3))); //
     }
     public double UpgradeMadeira()
     {
