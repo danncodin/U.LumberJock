@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37867c8fb623ba942a8997e56224f218, type: 3}
   m_Name: Carvalho Europeu
   m_EditorClassIdentifier: 
-  BaseHitPoints: 13
-  wood: 5
+  BaseHitPoints: 20
+  wood: 12
   TreeImage: {fileID: 21300000, guid: ef42259ddbf844d42b962a4d340c66fc, type: 3}

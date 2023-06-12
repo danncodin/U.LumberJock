@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Africa.unity
     guid: 8ddac950c5eb94b4f97fb443d24ba52c
+  - enabled: 1
+    path: Assets/Scenes/Oceania.unity
+    guid: 55aa0eac14b45124c9d65f4379a39ebf
   m_configObjects: {}

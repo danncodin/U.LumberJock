@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37867c8fb623ba942a8997e56224f218, type: 3}
   m_Name: Teixo
   m_EditorClassIdentifier: 
-  BaseHitPoints: 0
-  wood: 0
+  BaseHitPoints: 25
+  wood: 60
   TreeImage: {fileID: 21300000, guid: fe205b3e3b9256a4294a3ba48247d1a6, type: 3}

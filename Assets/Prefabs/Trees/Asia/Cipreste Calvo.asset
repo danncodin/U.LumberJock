@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37867c8fb623ba942a8997e56224f218, type: 3}
   m_Name: Cipreste Calvo
   m_EditorClassIdentifier: 
-  BaseHitPoints: 0
-  wood: 0
+  BaseHitPoints: 60
+  wood: 150
   TreeImage: {fileID: 21300000, guid: 80e2adbaaece9fc43999b68a7b327d4d, type: 3}

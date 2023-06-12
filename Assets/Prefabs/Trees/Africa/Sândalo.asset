@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37867c8fb623ba942a8997e56224f218, type: 3}
   m_Name: "S\xE2ndalo"
   m_EditorClassIdentifier: 
-  BaseHitPoints: 29
-  wood: 19
+  BaseHitPoints: 15
+  wood: 10
   TreeImage: {fileID: 21300000, guid: 18e524a59033b1949a4b0fb00e0ebcb0, type: 3}

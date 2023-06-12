@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37867c8fb623ba942a8997e56224f218, type: 3}
   m_Name: "Pinheiro Vermelho Japon\xEAs"
   m_EditorClassIdentifier: 
-  BaseHitPoints: 0
-  wood: 0
+  BaseHitPoints: 60
+  wood: 200
   TreeImage: {fileID: 21300000, guid: 5bcf8a8fecb05774e86e981c0bfcde97, type: 3}

@@ -799,14 +799,18 @@ MonoBehaviour:
   BookPanel: {fileID: 22443772}
   background: {fileID: 21300000, guid: 3c47abcf3fb3d12408efe3073b2e379f, type: 3}
   bookPages:
-  - {fileID: 21300000, guid: b1bac3987b1ad064a80f72496ee46425, type: 3}
-  - {fileID: 21300000, guid: 9f1ddd79b2fa5444b9f0150b809a8dd0, type: 3}
-  - {fileID: 21300000, guid: fca57dd61c151c649adcbc7ba39e71bb, type: 3}
-  - {fileID: 21300000, guid: b85050c83db242e4eafba8f57eb350d9, type: 3}
-  - {fileID: 21300000, guid: b0c18c676ab4d4343adc234472e1d618, type: 3}
-  - {fileID: 21300000, guid: 86cccff4f962a034c841b8a741b9d50b, type: 3}
-  - {fileID: 21300000, guid: 9ad9c7be1dcdd6d45ab6e643fc600a88, type: 3}
-  - {fileID: 21300000, guid: a8371807677c9624f95debc13138fe33, type: 3}
+  - {fileID: 21300000, guid: 71f4c3299c8819a41a21594a8564b590, type: 3}
+  - {fileID: 21300000, guid: e3e739710fc8cb84a8424e2bd634e83b, type: 3}
+  - {fileID: 21300000, guid: f55a185c7c87a2e459c205e3ea7f78ce, type: 3}
+  - {fileID: 21300000, guid: 53c69b33dcb4ef443a4f0a86d470b885, type: 3}
+  - {fileID: 21300000, guid: b148a13b21b1a974c874c7b4ce62bda8, type: 3}
+  - {fileID: 21300000, guid: 9b8c187f09179394cabafd196d265a94, type: 3}
+  - {fileID: 21300000, guid: 42a60b0783a7cc44b8c92b9c91731311, type: 3}
+  - {fileID: 21300000, guid: f8a82a042401fca418ffef8ea5cb401d, type: 3}
+  - {fileID: 21300000, guid: ce8111523bad2014caee1c4921ae5e6f, type: 3}
+  - {fileID: 21300000, guid: 35e21b3b533c7b14f8090f502f4436ba, type: 3}
+  - {fileID: 21300000, guid: fea803698388fb74ebe4f81d8718fe9a, type: 3}
+  - {fileID: 21300000, guid: 23160375ae99a524ba8781b3ee4bc09b, type: 3}
   interactable: 1
   enableShadowEffect: 1
   currentPage: 0

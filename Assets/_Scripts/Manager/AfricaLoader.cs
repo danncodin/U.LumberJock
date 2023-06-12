@@ -14,8 +14,12 @@ public class AfricaLoader : MonoBehaviour
     }
     public void LoadNextLevel()
     {
-        StartCoroutine(LoadLevel(1)); 
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+
+        StartCoroutine(LoadLevel(nextSceneIndex));
     }
+
     IEnumerator LoadLevel(int levelIndex)
     {
         transition.SetTrigger("Start");

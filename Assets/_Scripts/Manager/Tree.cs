@@ -5,16 +5,17 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 public class Tree : MonoBehaviour
 {
     public double wood;
     public int TreeWood;
     public int countDie = 0;
-    public int countClick = 0;
+    public double countClick = 0;
     public int upgradeMadeiraCount = 0;
     public int hitPoint = 1;
-    public int woodPoint = 1;
+    public double woodPoint = 1;
     public GameObject woodPlus;
     public GameObject woodPlusTEXT;
     public TextMeshProUGUI woodText;
@@ -34,19 +35,37 @@ public class Tree : MonoBehaviour
     public AudioManager audioManager;
     private AudioSource audioSource;
     public AudioSource treeDiyngSound;
-    public GameObject dialogueTriggerButton;
-    public GameObject dialogueTrigger1;
-    public GameObject dialogueTrigger2;
-    public GameObject dialogueTrigger3;
-    public GameObject dialogueTrigger4;
-    
+    public GameObject dialogueEuropaTrigger1;
+    public GameObject dialogueEuropaTrigger2;
+    public GameObject dialogueEuropaTrigger3;
+    public GameObject dialogueEuropaTrigger4;
+    public GameObject dialogueAfricaTrigger1;
+    public GameObject dialogueAfricaTrigger2;
+    public GameObject dialogueAfricaTrigger3;
+    public GameObject dialogueAfricaTrigger4;
+    public GameObject dialogueAfricaTrigger5;
+    public GameObject dialogueOceaniaTrigger1;
+    public GameObject dialogueOceaniaTrigger2;
+    public GameObject dialogueOceaniaTrigger3;
+    public GameObject dialogueOceaniaTrigger4;
+    public GameObject dialogueOceaniaTrigger5;
+
 
     private void Start()
     {
-      if (countDie == 0)
+
+
+  if (countDie ==  0)
+  {
+      if (SceneManager.GetActiveScene().name == "Europa")
       {
-        dialogueTrigger1.SetActive(true);
+        dialogueEuropaTrigger1.SetActive(true);
       }
+      else if (SceneManager.GetActiveScene().name == "Africa")
+      {
+        dialogueAfricaTrigger1.SetActive(true);
+      }
+  }
       woodUP = FindAnyObjectByType<UpgradeAreaManager>();
       AudioManager audioManager = GetComponent<AudioManager>();
       audioSource = gameObject.AddComponent<AudioSource>();
@@ -94,7 +113,7 @@ public class Tree : MonoBehaviour
       Instantiate(woodPlusTEXT,transform.position, transform.rotation);
       SpawnTree();
     }
-    private void SpawnTree()
+    public void SpawnTree()
     {
       SpawnDelay();
       //ORDER
@@ -113,7 +132,6 @@ public class Tree : MonoBehaviour
     }
     private void UpdateUI()
     {
-      hitPointText.text = currentHitPoints + " HP";
       hitpointSlider.value = currentHitPoints / (float) maxHitPoints;
       woodText.text = "" + GetWoodCount();
     }
@@ -140,15 +158,54 @@ public class Tree : MonoBehaviour
       Debug.Log("countDie: " + countDie);
       if(countDie <  areaProfile.availableTreeProfiles.Count)
       {
-        if (countDie == 1)
-        {
-          dialogueTrigger2.SetActive(true);
-        }  
-        if (upgradeMadeiraCount == 1)
-        {
-          dialogueTrigger3.SetActive(true);
+        if (SceneManager.GetActiveScene().name == "Europa")
+          {
+            if (countDie == 1)
+              {
+                dialogueEuropaTrigger2.SetActive(true);
+              }  
+            if (upgradeMadeiraCount == 1)
+              {
+                dialogueEuropaTrigger3.SetActive(true);
+              }
+          }
+        if (SceneManager.GetActiveScene().name == "Africa")
+        { 
+          if (countDie == 1)  
+          {
+            dialogueAfricaTrigger2.SetActive(true);
+          }
+          if (countDie == 2)
+          {
+            dialogueAfricaTrigger3.SetActive(true);
+          }
+          if (countDie == 3)
+          {
+            dialogueAfricaTrigger4.SetActive(true);
+          }
         }
+        if (SceneManager.GetActiveScene().name == "Oceania")
+        { 
+          if (countDie == 1)  
+          {
+            dialogueOceaniaTrigger1.SetActive(true);
+          }
+          if (countDie == 2)
+          {
+            dialogueOceaniaTrigger2.SetActive(true);
+          }
+          if (countDie == 34)
+          {
+            dialogueOceaniaTrigger3.SetActive(true);
+          }
+          if (countDie == 3)
+          {
+            dialogueOceaniaTrigger4.SetActive(true);
+          }
 
+        }
+        
+      
       }
     }
     public double GetWoodCount()
@@ -172,9 +229,11 @@ public class Tree : MonoBehaviour
     {
         return currentHitPoints -= hitPoint;
     }
-    public int UpgradeBolsa()
+    public double UpgradeBolsa()
     {      
-      return woodPoint++;
+      woodPoint += TreeWood * 0.1 + 1;
+      woodPoint = Math.Round(woodPoint);
+      return woodPoint;
     }
     public int UpgradeAxe()
     {
@@ -190,7 +249,8 @@ public class Tree : MonoBehaviour
     }
     public double UpgradeMadeira()
     {
-      countClick++;
+      countClick+= TreeWood * 0.1 + 1;
+      countClick = Math.Round(countClick);
       return upgradeMadeiraCount++;
     }
     public void ClickMadeiraUP()

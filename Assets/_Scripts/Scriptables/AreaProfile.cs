@@ -5,7 +5,6 @@ using UnityEngine;
 [CreateAssetMenu]
 public class AreaProfile : ScriptableObject
 {
-    
     public List<TreeData> availableTreeProfiles;
 }
 

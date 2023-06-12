@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37867c8fb623ba942a8997e56224f218, type: 3}
   m_Name: Canela-Preta
   m_EditorClassIdentifier: 
-  BaseHitPoints: 0
-  wood: 14
+  BaseHitPoints: 45
+  wood: 100
   TreeImage: {fileID: 21300000, guid: fa1fa7c9c6089bb46a663cb283082c14, type: 3}

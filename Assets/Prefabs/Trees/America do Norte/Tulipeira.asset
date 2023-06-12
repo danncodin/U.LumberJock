@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37867c8fb623ba942a8997e56224f218, type: 3}
   m_Name: Tulipeira
   m_EditorClassIdentifier: 
-  BaseHitPoints: 0
-  wood: 0
+  BaseHitPoints: 20
+  wood: 35
   TreeImage: {fileID: 21300000, guid: f91dba5960c94de41a35839739fb9165, type: 3}

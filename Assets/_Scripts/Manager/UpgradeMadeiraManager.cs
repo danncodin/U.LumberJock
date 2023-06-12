@@ -40,8 +40,8 @@ public class UpgradeMadeiraManager : MonoBehaviour
     }
     private double CalculateUpgradeCost()
     {
-        double baseCost = 10;
-        return Math.Round((Math.Pow((baseCost * upgradeMultiplier),  1.3))); //
+        double baseCost = 30;
+        return Math.Round((Math.Pow((baseCost * upgradeMultiplier),  1.4))); //
     }
     public double UpgradeMadeira()
     {

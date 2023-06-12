@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class DialogueManager : MonoBehaviour
@@ -53,11 +54,29 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.Log("Conversation ended!");
             backgroundBox.LeanScale(Vector3.zero, 0.5f).setEaseInOutExpo();
-
-            vtree.dialogueTrigger1.SetActive(false);
-            vtree.dialogueTrigger2.SetActive(false);
-            vtree.dialogueTrigger3.SetActive(false);
-            varea.dialogueTrigger4.SetActive(false);
+            if (SceneManager.GetActiveScene().name == "Europa")
+            {
+                vtree.dialogueEuropaTrigger1.SetActive(false);
+                vtree.dialogueEuropaTrigger2.SetActive(false);
+                vtree.dialogueEuropaTrigger3.SetActive(false);
+                vtree.dialogueEuropaTrigger4.SetActive(false);
+            }
+            if (SceneManager.GetActiveScene().name == "Africa")
+            {
+                vtree.dialogueAfricaTrigger1.SetActive(false);
+                vtree.dialogueAfricaTrigger2.SetActive(false);
+                vtree.dialogueAfricaTrigger3.SetActive(false);
+                vtree.dialogueAfricaTrigger4.SetActive(false);
+                vtree.dialogueAfricaTrigger5.SetActive(false);
+            }
+            if (SceneManager.GetActiveScene().name == "Oceania")
+            {
+                vtree.dialogueOceaniaTrigger1.SetActive(false);
+                vtree.dialogueOceaniaTrigger2.SetActive(false);
+                vtree.dialogueOceaniaTrigger3.SetActive(false);
+                vtree.dialogueOceaniaTrigger4.SetActive(false);
+                vtree.dialogueOceaniaTrigger5.SetActive(false);
+            }
             isActive = false;
             jock.gameObject.SetActive(true);
         }

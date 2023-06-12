@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37867c8fb623ba942a8997e56224f218, type: 3}
   m_Name: Castanheiro
   m_EditorClassIdentifier: 
-  BaseHitPoints: 16
+  BaseHitPoints: 14
   wood: 6
   TreeImage: {fileID: 21300000, guid: 7263b36b23f9475418e4740ab45b836c, type: 3}

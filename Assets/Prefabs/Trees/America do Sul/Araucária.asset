@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37867c8fb623ba942a8997e56224f218, type: 3}
   m_Name: "Arauc\xE1ria"
   m_EditorClassIdentifier: 
-  BaseHitPoints: 0
-  wood: 10
+  BaseHitPoints: 50
+  wood: 120
   TreeImage: {fileID: 21300000, guid: 4091c69704cf838409b8ca2212b9b4d3, type: 3}

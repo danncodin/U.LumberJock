@@ -43,7 +43,7 @@ public class UpgradeBolsaManager : MonoBehaviour
         double baseCost = 15;
         return Math.Round((Math.Pow((baseCost * upgradeMultiplier),  1.3))); //1.2
     } 
-    public int UpgradeBolsa()
+    public double UpgradeBolsa()
     {
         return vtree.UpgradeBolsa();
     }
